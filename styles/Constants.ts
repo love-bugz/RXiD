@@ -1,4 +1,7 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+
+const FULL_WIDTH = Dimensions.get("window").width;
+const FULL_HEIGHT = Dimensions.get("window").height;
 
 export const colors = {
     primary: "#2d90f5",
@@ -60,9 +63,10 @@ const OUTER_PADDING = 10;
 
 export const layout = StyleSheet.create({
     fullPage: {
-        flex: 1,
+        width: FULL_WIDTH,
+        height: FULL_HEIGHT,
         alignItems: "center",
         justifyContent: "center",
-        padding: OUTER_PADDING,
+        paddingHorizontal: OUTER_PADDING,
     },
 });
