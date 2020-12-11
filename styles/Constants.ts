@@ -1,7 +1,4 @@
-import { StyleSheet, Dimensions } from "react-native";
-
-const FULL_WIDTH = Dimensions.get("window").width;
-const FULL_HEIGHT = Dimensions.get("window").height;
+export const PADDING = 10;
 
 export const colors = {
     primary: "#2d90f5",
@@ -9,64 +6,53 @@ export const colors = {
     secondary: "#40ab47",
     contrastText: "#fff",
     accent: "#ffa500",
+    danger: "#FF4D4F",
 };
 
-export const font = StyleSheet.create({
-    largeTitle: {
-        color: colors.text,
-        fontSize: 36,
+export const typeography = {
+    title1: {
+        fontSize: 34,
+        lineHeight: 41,
+        fontFamily: "Arimo-bold",
     },
-    largeTitleBold: {
-        color: colors.text,
-        fontSize: 36,
-        fontWeight: "800",
+    title2: {
+        fontSize: 28,
+        lineHeight: 34,
+        fontFamily: "Arimo-bold",
     },
-    title: {
-        color: colors.text,
-        fontSize: 24,
+    title3: {
+        fontSize: 22,
+        lineHeight: 26,
+        fontFamily: "Arimo-bold",
     },
-    titleBold: {
-        color: colors.text,
-        fontSize: 24,
-        fontWeight: "800",
+    headline: {
+        fontSize: 17,
+        lineHeight: 22,
+        fontFamily: "Arimo-bold",
     },
-    largeBody: {
-        color: colors.text,
-        fontSize: 16,
-    },
-    largeBodyBold: {
-        color: colors.text,
-        fontSize: 16,
-        fontWeight: "800",
+    subhead: {
+        fontSize: 15,
+        lineHeight: 18,
+        fontFamily: "Arimo-bold",
     },
     body: {
-        color: colors.text,
-        fontSize: 12,
+        fontSize: 17,
+        lineHeight: 20,
+        fontFamily: "Arimo-regular",
     },
-    bodyBold: {
-        color: colors.text,
-        fontSize: 12,
-        fontWeight: "800",
+    callout: {
+        fontSize: 16,
+        lineHeight: 20,
+        fontFamily: "Arimo-regular",
     },
     caption: {
-        color: colors.text,
-        fontSize: 8,
+        fontSize: 11,
+        lineHeight: 18,
+        fontFamily: "Arimo-regular",
     },
-    captionBold: {
-        color: colors.text,
-        fontSize: 8,
-        fontWeight: "800",
+    footnote: {
+        fontSize: 13,
+        lineHeight: 18,
+        fontFamily: "Arimo-regular",
     },
-});
-
-const OUTER_PADDING = 10;
-
-export const layout = StyleSheet.create({
-    fullPage: {
-        width: FULL_WIDTH,
-        height: FULL_HEIGHT,
-        alignItems: "center",
-        justifyContent: "center",
-        paddingHorizontal: OUTER_PADDING,
-    },
-});
+};

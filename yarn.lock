@@ -1004,6 +1004,11 @@
   dependencies:
     "@types/hammerjs" "^2.0.36"
 
+"@expo-google-fonts/arimo@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/arimo/-/arimo-0.1.0.tgz#464e99095490ee35251d4412df4deab676cd6ee3"
+  integrity sha512-OV/3e1lgsphAsBMz+FUJSVzz5o77JyjJ+LY1zWM6cU12/DNs/cAWBtDlqusQBi6ykwE9a69ySWyNeovNU/MhAw==
+
 "@expo/configure-splash-screen@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@expo/configure-splash-screen/-/configure-splash-screen-0.2.0.tgz#84f9f71363259f16fd0073636a198c750a3cdd7c"
