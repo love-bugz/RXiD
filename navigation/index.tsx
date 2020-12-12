@@ -12,12 +12,16 @@ const RootStack = createStackNavigator<IndexStackParamList>();
 export default function AppNavigator() {
     return (
         <NavigationContainer>
-            <RootStack.Navigator initialRouteName="Home">
+            <RootStack.Navigator initialRouteName="Login">
                 <RootStack.Screen
                     name="AppLoading"
                     component={AppLoadingScreen}
                 />
-                <RootStack.Screen name="Login" component={LoginScreen} />
+                <RootStack.Screen
+                    name="Login"
+                    component={LoginScreen}
+                    options={{ headerShown: false }}
+                />
                 <RootStack.Screen name="Home" component={HomeTabNavigator} />
             </RootStack.Navigator>
         </NavigationContainer>
