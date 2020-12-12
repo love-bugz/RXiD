@@ -1,20 +1,20 @@
 export type CaptureStackParamList = {
-    CaptureScreen: undefined;
+  CaptureScreen: undefined;
 };
 
 export type ReminderStackParamList = {
-    ReminderScreen: undefined;
+  ReminderScreen: undefined;
 };
 
 export type HomeTabsParamList = {
-    Capture: undefined; //this is CaptureScreenStack
-    Reminder: undefined; //this is ReminderScreenStack
+  Capture: undefined; //this is CaptureScreenStack
+  Reminder: undefined; //this is ReminderScreenStack
 };
 
 export type IndexStackParamList = {
-    AppLoading: undefined; //screen
-    Login: undefined; //screen
-    Home: undefined; //Home is a bottom tab navigator
+  AppLoading: undefined; //screen
+  Login: undefined; //screen
+  Home: undefined; //Home is a bottom tab navigator
 };
 
 //each tab is a stack
