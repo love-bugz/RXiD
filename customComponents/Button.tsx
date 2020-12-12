@@ -8,7 +8,7 @@ import {
     View,
 } from "react-native";
 
-import { colors, PADDING } from "../styles/Constants";
+import StyleGuide from "../styles/StyleGuide";
 import Text from "./Text";
 
 interface ButtonProps {
@@ -16,10 +16,11 @@ interface ButtonProps {
     secondary?: boolean;
     danger?: boolean;
     block?: boolean;
+    noShadow?: boolean;
     icon?: JSX.Element;
     buttonStyle?: StyleProp<ViewStyle>;
     labelStyle?: StyleProp<TextStyle>;
-    onPress: () => void;
+    onPress: (() => void) | ((e: any) => void);
 }
 
 const styles = StyleSheet.create({
@@ -27,12 +28,12 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        paddingVertical: PADDING,
-        paddingHorizontal: PADDING * 2,
+        paddingVertical: StyleGuide.spacing,
+        paddingHorizontal: StyleGuide.spacing * 2,
         borderRadius: 5,
     },
     label: {
-        color: colors.contrastText,
+        color: StyleGuide.colors.contrastText,
         textAlign: "center",
     },
 });
@@ -42,16 +43,19 @@ const Button = ({
     secondary,
     danger,
     block,
+    noShadow,
     icon,
     buttonStyle,
     labelStyle,
     onPress,
 }: ButtonProps) => {
     const BUTTON_COLOR = secondary
-        ? colors.secondary
+        ? StyleGuide.colors.secondary
         : danger
-        ? colors.danger
-        : colors.primary;
+        ? StyleGuide.colors.danger
+        : StyleGuide.colors.primary;
+
+    const shadows = noShadow ? undefined : StyleGuide.shadow;
 
     const blockButton = (
         <TouchableOpacity
@@ -59,7 +63,12 @@ const Button = ({
             style={[
                 styles.button,
                 buttonStyle,
-                { backgroundColor: BUTTON_COLOR, width: "80%" },
+                shadows,
+                {
+                    backgroundColor: BUTTON_COLOR,
+                    width: "100%",
+                    paddingVertical: StyleGuide.spacing + 2,
+                },
             ]}>
             {icon && icon}
             <Text
@@ -67,7 +76,7 @@ const Button = ({
                 style={[
                     styles.label,
                     labelStyle,
-                    icon && { marginLeft: PADDING },
+                    icon && { marginLeft: StyleGuide.spacing },
                 ]}>
                 {label}
             </Text>
@@ -81,6 +90,7 @@ const Button = ({
                 style={[
                     styles.button,
                     buttonStyle,
+                    shadows,
                     { backgroundColor: BUTTON_COLOR },
                 ]}>
                 {icon && icon}
@@ -89,7 +99,7 @@ const Button = ({
                     style={[
                         styles.label,
                         labelStyle,
-                        icon && { marginLeft: PADDING },
+                        icon && { marginLeft: StyleGuide.spacing },
                     ]}>
                     {label}
                 </Text>

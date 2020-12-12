@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ViewProps as OriginalViewProps, View, Dimensions } from "react-native";
+import StyleGuide from "../styles/StyleGuide";
 
 const insetTypes = {
     horizontal: "horizontal",
@@ -44,7 +45,11 @@ const FullPageView = ({ style, insets, children }: ViewProps) => {
                     paddingTop,
                     paddingBottom,
                 },
-                { width, height },
+                {
+                    width,
+                    height,
+                    backgroundColor: StyleGuide.colors.contrastText,
+                },
                 style,
             ]}>
             {children}
