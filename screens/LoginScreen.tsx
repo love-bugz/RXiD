@@ -26,6 +26,7 @@ export default function LoginScreen() {
   function login(e: any) {
     e.preventDefault();
     console.log(`EMAIL: ${email}\nPASSWORD: ${password}`);
+    console.log('login');
   }
 
   function validate(e: any) {
