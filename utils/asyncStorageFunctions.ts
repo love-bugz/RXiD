@@ -1,5 +1,7 @@
+// Device storage
 import AsyncStorage from '@react-native-community/async-storage';
 
+// Function to set items in async storage
 export async function setAsyncStorageItems(items: [string, string][]) {
   try {
     items.forEach(async item => {
@@ -10,6 +12,7 @@ export async function setAsyncStorageItems(items: [string, string][]) {
   }
 }
 
+// Function to remove items from async storage
 export async function removeAsyncStorageItems(items: string[]) {
   try {
     items.forEach(async item => {

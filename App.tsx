@@ -13,9 +13,12 @@ import { Provider } from 'react-redux';
 // Third Party Libraries
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+// EXPORTED APP COMPONENT --------------------------------
 export default function App() {
+  // Using Custom Hook
   const isLoadingComplete = useCachedResources();
 
+  // Once resources are loaded, then the app returns
   if (!isLoadingComplete) {
     return null;
   } else {
