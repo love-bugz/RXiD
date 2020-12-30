@@ -11,6 +11,7 @@ import { store } from './store';
 import { Provider } from 'react-redux';
 
 // Third Party Libraries
+//@ts-ignore
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 // EXPORTED APP COMPONENT --------------------------------

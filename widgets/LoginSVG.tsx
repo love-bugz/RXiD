@@ -4,8 +4,6 @@ import Svg, { Path } from 'react-native-svg';
 import StyleGuide from '../styles/StyleGuide';
 
 const LIGHT_PRIMARY = StyleGuide.colors.brand.primary[100];
-const PRIMARY = StyleGuide.colors.brand.primary[100];
-
 const { width } = Dimensions.get('window');
 
 export function LoginSVG() {

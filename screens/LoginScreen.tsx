@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 // Library Components
 import { View, Dimensions, TextInput, StyleSheet, Keyboard, Image } from 'react-native';
+//@ts-ignore
 import { LinearGradient } from 'expo-linear-gradient';
 
 // Utility functions
@@ -15,6 +16,7 @@ import Button from '../customComponents/Button';
 import Text from '../customComponents/Text';
 import Input from '../customComponents/Input';
 import { LoginSVG, BottomSVG } from '../widgets/LoginSVG';
+//@ts-ignore
 import error_icon from '../assets/error.png';
 
 // Styling
@@ -56,7 +58,7 @@ export default function LoginScreen() {
     e.preventDefault();
     console.log(`EMAIL: ${email}\nPASSWORD: ${password}`);
     console.log('login');
-    navigation.navigate('Home');
+    navigation.replace('Home');
   }
 
   // validate emai and password, set errors if necessary

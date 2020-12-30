@@ -1,6 +1,12 @@
 import React, { useState, useEffect, SetStateAction, Dispatch, useRef } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { Camera, CameraCapturedPicture } from 'expo-camera';
+//@ts-ignore
+import StyleGuide from '../styles/StyleGuide';
+
+import camera_icon from '../assets/camera_icon.png';
+
+const NEUTRALS = StyleGuide.colors.neutral;
 
 export default function App() {
   const [hasPermission, setHasPermission] = useState<null | boolean>(null);
@@ -37,7 +43,22 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Camera style={styles.camera} type={type} ref={camera}>
+      <View style={styles.rows}>
+        <View style={styles.column}>
+          <Text style={[StyleGuide.typeography.largeBodyBold, { marginVertical: 10 }]}>
+            Find Medications
+          </Text>
+          <View style={styles.cameraModalButton} onTouchStart={() => console.log('PRESSED')}>
+            <Text style={[StyleGuide.typeography.largeBodyRegular]}>Take Photo</Text>
+            <Image source={camera_icon} style={{ height: 85, width: 100, marginTop: 6 }} />
+          </View>
+        </View>
+        <View style={styles.column}>
+          <Text>Hello</Text>
+        </View>
+      </View>
+
+      {/* <Camera style={styles.camera} type={type} ref={camera}>
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.button}
@@ -47,7 +68,7 @@ export default function App() {
             <Text style={styles.text}> Snap </Text>
           </TouchableOpacity>
         </View>
-      </Camera>
+      </Camera> */}
     </View>
   );
 }
@@ -55,6 +76,33 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: NEUTRALS.white,
+  },
+  rows: {
+    flexDirection: 'row',
+    marginHorizontal: 4,
+  },
+  column: {
+    flexDirection: 'column',
+    flex: 1,
+    marginHorizontal: 4,
+    alignItems: 'center',
+    borderRightWidth: 1,
+    borderLeftWidth: 1,
+    borderColor: NEUTRALS[200],
+    paddingHorizontal: 6,
+  },
+  cameraModalButton: {
+    borderWidth: 1.5,
+    borderColor: NEUTRALS[300],
+    borderRadius: 4,
+    padding: 16,
+    ...StyleGuide.shadow,
+    marginVertical: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: NEUTRALS[150],
+    width: '100%',
   },
   camera: {
     flex: 1,

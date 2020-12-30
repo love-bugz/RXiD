@@ -5,16 +5,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Navigation Types
-import {
-  CaptureStackParamList,
-  ReminderStackParamList,
-  HomeTabsParamList,
-  IndexStackParamList,
-} from '../types';
+import { CaptureStackParamList, ReminderStackParamList, HomeTabsParamList } from '../types';
 
 // Screen Components
 import CaptureScreen from '../screens/CaptureScreen';
 import ReminderScreen from '../screens/ReminderScreen';
+import SearchResultsScreen from '../screens/SearchResultsScreen';
 
 // Create stack navigator
 const CaptureStack = createStackNavigator<CaptureStackParamList>();
@@ -23,6 +19,7 @@ function CaptureStackNavigator() {
   return (
     <CaptureStack.Navigator initialRouteName="CaptureScreen">
       <CaptureStack.Screen name="CaptureScreen" component={CaptureScreen} />
+      <CaptureStack.Screen name="SearchResultsScreen" component={SearchResultsScreen} />
     </CaptureStack.Navigator>
   );
 }

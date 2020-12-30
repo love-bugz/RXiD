@@ -14,6 +14,7 @@ const StyleGuide = {
     extraLargeBlock: 96,
     giant: 120,
   },
+  round: 4,
   colors: {
     brand: {
       primary: {
